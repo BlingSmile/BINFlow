@@ -2,7 +2,7 @@
  * @Author: BlingBling 
  * @Date: 2018-06-13 15:43:31 
  * @Last Modified by: BlingBling
- * @Last Modified time: 2018-06-13 16:32:40
+ * @Last Modified time: 2018-06-13 17:04:42
  */
 
  (function(global,undefined){
@@ -18,7 +18,7 @@
          baseRect.onmousedown = function(ev){
             var ev = ev||event;
             var n = addDiv(ev);
-             var newRect = $$("rect");
+             var newRect = $$("rect",n);
              ActivityList.push(newRect);
          }
      }else{
@@ -30,8 +30,6 @@
         document.body.appendChild(d);
         d.setAttribute("class","rect");
         d.style.position ="absolute";
-        console.log(ev.clientY);
-        console.log(d.offsetHeight);
         d.style.top = (ev.clientY -d.offsetHeight/2) +"px";
         d.style.left = (ev.clientX -d.offsetWidth/2 )+"px";
         d.onmousedown = function(){

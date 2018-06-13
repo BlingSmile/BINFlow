@@ -2,7 +2,7 @@
  * @Author: BlingBling 
  * @Date: 2018-06-13 11:06:43 
  * @Last Modified by: BlingBling
- * @Last Modified time: 2018-06-13 16:32:35
+ * @Last Modified time: 2018-06-13 17:02:59
  * core.js 核心控件
  */
 
@@ -16,7 +16,6 @@
          Child.prototype = new F();
          Child.prototype.constructor = Child;
          Child.uber = Parent.prototype;//备用属性
-         console.log(Child.prototype.__proto__ === BaseObject.prototype);
      }
 
      function BaseObject(){
@@ -24,8 +23,14 @@
      }
 
      BaseObject.prototype = {
-         name:"baseObject",
-        
+        name:"baseObject",
+        element:"",
+        setElement:function(ele){
+            this.element = ele;
+        },
+        getElement:function(){
+            return this.element;
+        },
         getName:function (){
             return this.name;
         },
@@ -43,12 +48,11 @@
      extend(Vec,BaseObject);
 
      var vec = new Vec();
-     console.log(vec.getName());
      var bobj = new BaseObject();
 
-     global.$$ = $$ = function(name){
+     global.$$ = $$ = function(name,ele){
          switch(name){
-             case "rect":return new Vec();
+             case "rect":var vec = new Vec();vec.setElement(ele);return vec;
              default: return undefined;
          }
      }
