@@ -2,7 +2,7 @@
  * @Author: BlingBling 
  * @Date: 2018-06-13 15:43:31 
  * @Last Modified by: BlingBling
- * @Last Modified time: 2018-06-13 17:04:42
+ * @Last Modified time: 2018-06-13 22:23:26
  */
 
  (function(global,undefined){
@@ -45,3 +45,5 @@
         return d;
      }
  })(window,)
+
+ console.log(d);
