@@ -1,0 +1,22 @@
+/*
+ * @Author: BlingBling 
+ * @Date: 2018-06-13 15:26:57 
+ * @Last Modified by: BlingBling
+ * @Last Modified time: 2018-06-13 15:57:19
+ * base.css 基础css
+ */
+
+.rect,.rect_hover{
+    border-radius: 100px;
+    border-width: 1px;
+    border-bottom-color: black;
+    border-style:solid;
+    min-width: 100px;
+    width: 200px;
+    min-height: 100px;
+    margin:10px;
+}
+
+.rect_hover{
+    border-color: yellow;
+}
