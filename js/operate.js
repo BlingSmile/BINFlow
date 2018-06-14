@@ -2,7 +2,7 @@
  * @Author: BlingBling 
  * @Date: 2018-06-13 15:43:31 
  * @Last Modified by: BlingBling
- * @Last Modified time: 2018-06-13 22:32:08
+ * @Last Modified time: 2018-06-14 14:16:15
  */
 
  (function(global,undefined){
@@ -32,16 +32,6 @@
         d.style.position ="absolute";
         d.style.top = (ev.clientY -d.offsetHeight/2) +"px";
         d.style.left = (ev.clientX -d.offsetWidth/2 )+"px";
-        d.onmousedown = function(){
-            d.onmousemove = function(ev){
-                var ev = ev||event;
-                this.style.top = (ev.clientY -d.offsetHeight/2) +"px";
-                this.style.left = (ev.clientX -d.offsetWidth/2 )+"px";
-            }
-        }
-        d.onmouseup = function(){
-            this.onmousemove = function(){};
-        }
         return d;
      }
  })(window,)
